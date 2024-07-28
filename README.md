@@ -2,7 +2,7 @@
 
 ## Overview
 
-This action is used to add a output a banner to indicate the subsequent step within a composite action.
+This action is used to add a console log output a banner to indicate the subsequent step within a composite action.
 
 
 ## Requirements & Limitations
@@ -75,7 +75,7 @@ The composite action supports a MAXIMUM of 6 lines of text to be added into the 
 
 ```
 	- name: fetch_af_token_banner
-	  uses: goffinf/step-banner@v1.0.0
+	  uses: goffinf-homelab/step-banner@v1.0.0
 	  with:
 		banner_text: "Fetch secret value from Vault"
 ```
@@ -94,7 +94,7 @@ Console output:
 
 ```
     - name: multi_line_banner
-      uses: goffinf/step-banner@v1.0.0
+      uses: goffinf-homelab/step-banner@v1.0.0
       with:
         banner_text: "BANNER TEXT 1"
         banner_text2: "BANNER TEXT 2"
@@ -133,7 +133,7 @@ Console output:
 	  using: "composite"
 	  steps:
       - name: file_search_banner
-        uses: goffinf/step-banner@v1.0.0
+        uses: goffinf-homelab/step-banner@v1.0.0
         with:
           banner_text: "Search for requested file: ${{ inputs.filepath }}"
 	  banner_text_char: "@"
