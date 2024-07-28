@@ -1,0 +1,43 @@
+name: "step_banner"
+description: "Create a standard banner to delineate steps within a composite action"
+inputs:
+  banner_text:
+    description: 'The text to display in the composite action step banner'
+    required: true
+    type: string
+  banner_text_char:
+    description: 'The character to use as the border'
+    required: true
+    type: string
+    default: '#'
+  banner_text2:
+    description: 'Additional banner text if multiple lines are required'
+    required: false
+    type: string
+    default: 'NOT_SET'
+  banner_text3:
+    description: 'Additional banner text if multiple lines are required'
+    required: false
+    type: string
+    default: 'NOT_SET'
+  banner_text4:
+    description: 'Additional banner text if multiple lines are required'
+    required: false
+    type: string
+    default: 'NOT_SET'
+  banner_text5:
+    description: 'Additional banner text if multiple lines are required'
+    required: false
+    type: string
+    default: 'NOT_SET'
+  banner_text6:
+    description: 'Additional banner text if multiple lines are required'
+    required: false
+    type: string
+    default: 'NOT_SET'
+runs:
+  using: "composite"
+  steps:
+    - name: step banner
+      run: $GITHUB_ACTION_PATH/scripts/step-banner.sh "${{ inputs.banner_text }}" "${{ inputs.banner_text_char }}" "${{ inputs.banner_text2 }}" "${{ inputs.banner_text3 }}" "${{ inputs.banner_text4 }}" "${{ inputs.banner_text5 }}" "${{ inputs.banner_text6 }}"
+      shell: bash
